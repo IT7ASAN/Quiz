@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -1318,853 +1319,915 @@ body.light-mode .watermark:hover {
         // تعريف المتغيرات العامة
         let questions = {
             lec1: [{
-            question: "What is a common reason for missing values in clinical laboratory data?",
-            options: [
-                "Equipment malfunction during testing",
-                "Consistently perfect data entry",
-                "Unlimited patient monitoring resources",
-                "Standardized data collection across all hospitals"
-            ],
-            answer: "Equipment malfunction during testing"
-        },
-        {
-            question: "Which issue can occur when patient records contain errors?",
-            options: [
-                "Improved diagnostic accuracy",
-                "Misleading trends in patient history",
-                "Perfect prediction of patient outcomes",
-                "Guaranteed consistency in clinical datasets"
-            ],
-            answer: "Misleading trends in patient history"
-        },
-        {
-            question: "What is the purpose of data preprocessing?",
-            options: [
-                "To improve data quality",
-                "To decrease data accuracy",
-                "To make data more inconsistent",
-                "To remove all analytical models"
-            ],
-            answer: "To improve data quality"
-        },
-        {
-            question: "What does data preprocessing help ensure?",
-            options: [
-                "Unpredictable model behavior",
-                "Random mining results",
-                "Reliable mining outcomes",
-                "Increased noise in datasets"
-            ],
-            answer: "Reliable mining outcomes"
-        },
-        {
-            question: "What may happen if preprocessing is not applied?",
-            options: [
-                "Mining outcomes remain reliable",
-                "Models will always be accurate",
-                "Data becomes error-free automatically",
-                "Models may give misleading results"
-            ],
-            answer: "Models may give misleading results"
-        },
-        {
-            question: "What is an example of missing data?",
-            options: [
-                "Unrecorded lab test results",
-                "Temperature recorded in both °C and °F",
-                "Blood pressure sensor errors",
-                "Extra repeated measurements"
-            ],
-            answer: "Unrecorded lab test results"
-        },
-        {
-            question: "Which item represents inconsistent data formats?",
-            options: [
-                "Temperature recorded in °C vs °F",
-                "Unrecorded lab values",
-                "Sensor errors in blood pressure",
-                "Missing patient identifiers"
-            ],
-            answer: "Temperature recorded in °C vs °F"
-        },
-        {
-            question: "What is an example of noisy data?",
-            options: [
-                "Fully standardized units",
-                "Perfectly stable readings",
-                "Blood pressure sensor errors",
-                "Missing test results"
-            ],
-            answer: "Blood pressure sensor errors"
-        },
-        {
-            question: "What is one outcome of proper preprocessing?",
-            options: [
-                "Improved data quality and accuracy",
-                "Increased data noise",
-                "More missing values",
-                "Randomized measurements"
-            ],
-            answer: "Improved data quality and accuracy"
-        },
-        {
-            question: "How does preprocessing support model performance?",
-            options: [
-                "It improves tasks such as classification, clustering, and regression",
-                "It prevents models from learning",
-                "It removes the need for any model training",
-                "It makes models produce inconsistent results"
-            ],
-            answer: "It improves tasks such as classification, clustering, and regression"
-        },
-        {
-            question: "Why is preprocessing important in clinical decision-making?",
-            options: [
-                "It ensures regulatory and clinical reliability",
-                "It introduces uncertainty into decisions",
-                "It eliminates the need for validation",
-                "It makes results non-reproducible"
-            ],
-            answer: "It ensures regulatory and clinical reliability"
-        },
-        {
-            question: "Which of the following is a valid method for handling missing values during data cleaning?",
-            options: [
-                "Imputation",
-                "Adding random noise",
-                "Duplicating missing entries",
-                "Ignoring all complete records"
-            ],
-            answer: "Imputation"
-        },
-        {
-            question: "Which example represents a data error that requires correction?",
-            options: [
-                "A negative age value",
-                "Normal temperature reading",
-                "Standard heart rate value",
-                "Correct blood type format"
-            ],
-            answer: "A negative age value"
-        },
-        {
-            question: "Why is removing duplicate or redundant records important?",
-            options: [
-                "To prevent bias caused by repeated entries",
-                "To increase dataset size",
-                "To reduce data accuracy",
-                "To generate more missing values"
-            ],
-            answer: "To prevent bias caused by repeated entries"
-        },
-        {
-            question: "How can noisy clinical measurements be addressed during data cleaning?",
-            options: [
-                "Using smoothing techniques",
-                "Increasing the dataset noise",
-                "Ignoring measurement errors",
-                "Repeating noisy values multiple times"
-            ],
-            answer: "Using smoothing techniques"
-        },
-        {
-            question: "What is the main goal of data integration in clinical settings?",
-            options: [
-                "Combining data from multiple clinical sources",
-                "Increasing missing data",
-                "Generating artificial noise",
-                "Deleting all patient records"
-            ],
-            answer: "Combining data from multiple clinical sources"
-        },
-        {
-            question: "Which system provides general hospital administrative and clinical information?",
-            options: [
-                "Hospital Information System (HIS)",
-                "Weather Monitoring System",
-                "Retail Billing System",
-                "Social Media Data Stream"
-            ],
-            answer: "Hospital Information System (HIS)"
-        },
-        {
-            question: "Laboratory test results typically come from which system?",
-            options: [
-                "Laboratory Information System (LIS)",
-                "Radiology Information System (RIS)",
-                "Traffic Control System",
-                "Banking Transaction System"
-            ],
-            answer: "Laboratory Information System (LIS)"
-        },
-        {
-            question: "Imaging data such as X-rays and MRIs are usually obtained from:",
-            options: [
-                "Radiology Information System (RIS)",
-                "Wearable fitness apps",
-                "Pharmacy billing systems",
-                "Classroom attendance trackers"
-            ],
-            answer: "Radiology Information System (RIS)"
-        },
-        {
-            question: "Which source contributes real-time monitoring data such as heart rate or movement?",
-            options: [
-                "Wearable sensors and patient monitoring devices",
-                "Postal delivery systems",
-                "Restaurant ordering systems",
-                "Library catalog databases"
-            ],
-            answer: "Wearable sensors and patient monitoring devices"
-        },
-        {
-            question: "What major challenge arises when integrating data from different systems?",
-            options: [
-                "Schema and format inconsistencies",
-                "Automatic uniformity of all data",
-                "Guaranteed identical data structures",
-                "Removal of all metadata"
-            ],
-            answer: "Schema and format inconsistencies"
-        },
-        {
-            question: "What is the purpose of normalization during data transformation?",
-            options: [
-                "Bringing lab values into common units",
-                "Adding random noise to measurements",
-                "Increasing the number of missing values",
-                "Removing all numerical features"
-            ],
-            answer: "Bringing lab values into common units"
-        },
-        {
-            question: "Which of the following is an example of aggregation?",
-            options: [
-                "Calculating the daily average heart rate",
-                "Recording every heartbeat individually",
-                "Converting numbers into categories",
-                "Ignoring all sensor readings"
-            ],
-            answer: "Calculating the daily average heart rate"
-        },
-        {
-            question: "What does encoding categorical data involve?",
-            options: [
-                "Converting categories such as gender or diagnosis codes into numerical form",
-                "Deleting all categorical features",
-                "Replacing numbers with text values",
-                "Randomly assigning labels to categories"
-            ],
-            answer: "Converting categories such as gender or diagnosis codes into numerical form"
-        },
-        {
-            question: "What is the main goal of data reduction?",
-            options: [
-                "Simplifying the dataset without losing key information",
-                "Removing all important features",
-                "Increasing dataset size unnecessarily",
-                "Adding more dimensions to the data"
-            ],
-            answer: "Simplifying the dataset without losing key information"
-        },
-        {
-            question: "Which of the following is a common data reduction technique?",
-            options: [
-                "Dimensionality reduction",
-                "Duplicating all features",
-                "Introducing redundant attributes",
-                "Randomly dropping important variables"
-            ],
-            answer: "Dimensionality reduction"
-        },
-        {
-            question: "Which challenge involves protecting sensitive patient information during preprocessing?",
-            options: [
-                "Patient privacy and confidentiality",
-                "Increasing dataset size",
-                "Removing clinical features",
-                "Enhancing noise levels"
-            ],
-            answer: "Patient privacy and confidentiality"
-        },
-        {
-            question: "What is a major challenge caused by data such as genomics, lab tests, and imaging?",
-            options: [
-                "High dimensionality of data",
-                "Limited feature variety",
-                "Perfectly uniform datasets",
-                "Very small data size"
-            ],
-            answer: "High dimensionality of data"
-        },
-        {
-            question: "Which challenge is associated with continuous data flow from ICU or monitoring devices?",
-            options: [
-                "Real-time data streams",
-                "Lack of sensor data",
-                "No need for preprocessing",
-                "Completely static datasets"
-            ],
-            answer: "Real-time data streams"
-        },
-        {
-            question: "What challenge arises when different clinical systems use incompatible formats or standards?",
-            options: [
-                "Interoperability between systems",
-                "Perfect schema alignment",
-                "Automatic standardization of all data",
-                "Identical structures across all hospitals"
-            ],
-            answer: "Interoperability between systems"
-        }
+           
+    question: "What distinguishes humans most from animals?",
+    options: [
+        "Strength",
+        "Large brains",
+        "Speed",
+        "Sharp teeth"
+    ],
+    answer: "Large brains"
+},
+{
+    question: "Which animals have the largest brains in the world?",
+    options: [
+        "Elephants",
+        "Sperm whales",
+        "Lions",
+        "Gorillas"
+    ],
+    answer: "Sperm whales"
+},
+{
+    question: "The human brain allows us to:",
+    options: [
+        "Fly",
+        "Reason and think",
+        "Swim fast",
+        "Run faster"
+    ],
+    answer: "Reason and think"
+},
+{
+    question: "Humans mainly move by:",
+    options: [
+        "Crawling",
+        "Walking upright",
+        "Jumping",
+        "Climbing"
+    ],
+    answer: "Walking upright"
+},
+{
+    question: "Walking upright frees our:",
+    options: [
+        "Legs",
+        "Hands",
+        "Head",
+        "Back"
+    ],
+    answer: "Hands"
+},
+{
+    question: "Human childbirth is dangerous because:",
+    options: [
+        "Babies are weak",
+        "Babies have large brains",
+        "Mothers are weak",
+        "Babies are small"
+    ],
+    answer: "Babies have large brains"
+},
+{
+    question: "Human babies are born:",
+    options: [
+        "Strong",
+        "Independent",
+        "Helpless",
+        "Intelligent"
+    ],
+    answer: "Helpless"
+},
+{
+    question: "Humans stay longer with parents because they:",
+    options: [
+        "Need food",
+        "Need long time to learn",
+        "Cannot walk",
+        "Cannot talk"
+    ],
+    answer: "Need long time to learn"
+},
+{
+    question: "Language is:",
+    options: [
+        "A normal sound",
+        "A special form of communication",
+        "A gesture",
+        "A signal"
+    ],
+    answer: "A special form of communication"
+},
+{
+    question: "Language probably began about:",
+    options: [
+        "5,000 years",
+        "10,000 years",
+        "50,000 years",
+        "100,000 years"
+    ],
+    answer: "50,000 years"
+},
+{
+    question: "Spoken language is hard to study because:",
+    options: [
+        "It changes fast",
+        "It leaves few traces",
+        "It is silent",
+        "It is simple"
+    ],
+    answer: "It leaves few traces"
+},
+{
+    question: "Chimpanzees communicate using:",
+    options: [
+        "Writing",
+        "Gestures and vocal calls",
+        "Music",
+        "Painting"
+    ],
+    answer: "Gestures and vocal calls"
+},
+{
+    question: "Music may have helped early humans in:",
+    options: [
+        "Hunting",
+        "Courtship and social bonding",
+        "Farming",
+        "Building"
+    ],
+    answer: "Courtship and social bonding"
+},
+{
+    question: "Music exists today in:",
+    options: [
+        "Few cultures",
+        "Some cultures",
+        "Most cultures",
+        "Every culture"
+    ],
+    answer: "Every culture"
+},
+{
+    question: "Art is mainly used to:",
+    options: [
+        "Decorate houses",
+        "Communicate emotions",
+        "Sell goods",
+        "Make tools"
+    ],
+    answer: "Communicate emotions"
+},
+{
+    question: "European cave paintings date back about:",
+    options: [
+        "15,000 years",
+        "25,000 years",
+        "35,000 years",
+        "45,000 years"
+    ],
+    answer: "35,000 years"
+},
+{
+    question: "The first stone tools appeared about:",
+    options: [
+        "1 million years",
+        "2.5 million years",
+        "5 million years",
+        "10 million years"
+    ],
+    answer: "2.5 million years"
+},
+{
+    question: "The first tools were made by:",
+    options: [
+        "Scientists",
+        "Modern humans",
+        "Our ancestors",
+        "Farmers"
+    ],
+    answer: "Our ancestors"
+},
+{
+    question: "Culture means:",
+    options: [
+        "Sharing ideas and knowledge",
+        "Building houses",
+        "Growing food",
+        "Making clothes"
+    ],
+    answer: "Sharing ideas and knowledge"
+},
+{
+    question: "Culture helps humans understand:",
+    options: [
+        "Past only",
+        "Present only",
+        "Future only",
+        "Past, present and future"
+    ],
+    answer: "Past, present and future"
+},
+{
+    question: "Human females live long after reproduction because of:",
+    options: [
+        "Medicine",
+        "Social bonds",
+        "Climate",
+        "Diet"
+    ],
+    answer: "Social bonds"
+},
+{
+    question: "Grandparents help families by:",
+    options: [
+        "Farming",
+        "Building",
+        "Supporting children",
+        "Hunting"
+    ],
+    answer: "Supporting children"
+},
+{
+    question: "Humans are sometimes called:",
+    options: [
+        "Hairy apes",
+        "Naked apes",
+        "Strong apes",
+        "Clever apes"
+    ],
+    answer: "Naked apes"
+},
+{
+    question: "Humans use clothing and fire mainly to:",
+    options: [
+        "Cook",
+        "Stay warm",
+        "Travel",
+        "Sleep"
+    ],
+    answer: "Stay warm"
+},
+{
+    question: "Cooking food helped human evolution because:",
+    options: [
+        "Food tastes better",
+        "Food is easier to digest",
+        "Food looks good",
+        "Food lasts longer"
+    ],
+    answer: "Food is easier to digest"
+},
+
+   
             ],
             lec2: [
 			
     {
-        "question": "What is the purpose of normalization in clinical data mining?",
-        "options": [
-            "To duplicate records for testing purposes",
-            "To remove all missing values from the dataset",
-            "To scale attributes to a common range for better algorithm performance",
-            "To convert categorical data into continuous values"
-        ],
-        "answer": "To scale attributes to a common range for better algorithm performance"
-    },
-    {
-        "question": "Discretization in clinical datasets is used to:",
-        "options": [
-            "Standardize patient ID formats",
-            "Detect duplicate entries",
-            "Increase the number of missing values",
-            "Group continuous data into meaningful intervals"
-        ],
-        "answer": "Group continuous data into meaningful intervals"
-    },
-    {
-        "question": "After handling missing values, inconsistencies, and duplicates, which step comes next?",
-        "options": [
-            "Ignoring irrelevant features",
-            "Random sampling of patient records",
-            "Data entry verification",
-            "Normalization"
-        ],
-        "answer": "Normalization"
-    },
-    {
-        "question": "What does normalization in clinical data refer to?",
-        "options": [
-            "Removing all missing values from the dataset",
-            "Randomly duplicating patient records",
-            "Scaling numerical data into a specific range to ensure equal contribution of variables",
-            "Converting categorical data into text format"
-        ],
-        "answer": "Scaling numerical data into a specific range to ensure equal contribution of variables"
-    },
-    {
-        "question": "Why is normalization important for clinical lab measurements?",
-        "options": [
-            "Because it increases the number of missing values",
-            "Because lab measurements may have different units, like blood glucose vs. blood pressure",
-            "Because it converts data into categorical intervals",
-            "Because it detects duplicate patient records"
-        ],
-        "answer": "Because lab measurements may have different units, like blood glucose vs. blood pressure"
-    },
-    {
-        "question": "How does normalization affect features with large ranges?",
-        "options": [
-            "It deletes them from the dataset",
-            "It converts them into categorical variables",
-            "It prevents them from dominating the analysis",
-            "It amplifies their influence on the results"
-        ],
-        "answer": "It prevents them from dominating the analysis"
-    },
-    {
-        "question": "Which of the following algorithms benefits from normalized clinical data?",
-        "options": [
-            "Randomly duplicating patient records",
-            "K-means clustering",
-            "Ignoring irrelevant features",
-            "Manual data entry verification"
-        ],
-        "answer": "K-means clustering"
-    },
-    {
-        "question": "What is a typical range used for normalization?",
-        "options": [
-            "[1, 10] only",
-            "[-100, 0] only",
-            "[0, 1] or [-1, 1]",
-            "[0, 1000] only"
-        ],
-        "answer": "[0, 1] or [-1, 1]"
-    },
-    {
-        "question": "Which formula represents Min–Max normalization?",
-        "options": [
-            "(X_{norm} = \\frac{X - X_{min}}{X_{max} - X_{min}})",
-            "(X_{norm} = \\frac{X - \\mu}{\\sigma})",
-            "(X_{norm} = X \\times 100)",
-            "(X_{norm} = X + \\mu)"
-        ],
-        "answer": "(X_{norm} = \\frac{X - X_{min}}{X_{max} - X_{min}})"
-    },
-    {
-        "question": "Which formula represents Z-score normalization?",
-        "options": [
-            "(X_{norm} = X + \\sigma)",
-            "(X_{norm} = \\frac{X - \\mu}{\\sigma})",
-            "(X_{norm} = \\frac{X - X_{min}}{X_{max} - X_{min}})",
-            "(X_{norm} = X \\times X_{max})"
-        ],
-        "answer": "(X_{norm} = \\frac{X - \\mu}{\\sigma})"
-    },
-    {
-        "question": "What is an advantage of normalization?",
-        "options": [
-            "Keeps all values within the same range",
-            "Sensitive to outliers",
-            "Distorts extreme values",
-            "Increases missing values"
-        ],
-        "answer": "Keeps all values within the same range"
-    },
-    {
-        "question": "Which is a disadvantage of normalization?",
-        "options": [
-            "Keeps all values within the same range",
-            "Simple and easy to apply",
-            "Improves algorithm performance",
-            "Sensitive to outliers"
-        ],
-        "answer": "Sensitive to outliers"
-    },
-    {
-        "question": "Why is normalization simple to apply?",
-        "options": [
-            "It requires advanced programming",
-            "It duplicates all records",
-            "It only requires basic math operations",
-            "It manually checks each value"
-        ],
-        "answer": "It only requires basic math operations"
-    },
-    {
-        "question": "What happens to extreme values in Min–Max normalization?",
-        "options": [
-            "They can distort the scaling",
-            "They are ignored automatically",
-            "They convert to categories",
-            "They always become zero"
-        ],
-        "answer": "They can distort the scaling"
-    },
-    {
-        "question": "How are blood glucose values between 85 and 240 mg/dL scaled?",
-        "options": [
-            "Scaled to a common range, e.g., 0 to 1",
-            "Left unchanged",
-            "Increased by 100%",
-            "Converted into text labels"
-        ],
-        "answer": "Scaled to a common range, e.g., 0 to 1"
-    },
-    {
-        "question": "What does Z-score normalization do to the data?",
-        "options": [
-            "Converts data to have mean = 0 and standard deviation = 1",
-            "Scales all values between 0 and 1",
-            "Duplicates data records",
-            "Converts data into categorical labels"
-        ],
-        "answer": "Converts data to have mean = 0 and standard deviation = 1"
-    },
-    {
-        "question": "Which formula is used for Z-score normalization?",
-        "options": [
-            "(X_z = \\frac{X - \\mu}{\\sigma})",
-            "(X_z = \\frac{X - X_{min}}{X_{max} - X_{min}})",
-            "(X_z = X \\times 100)",
-            "(X_z = X + \\sigma)"
-        ],
-        "answer": "(X_z = \\frac{X - \\mu}{\\sigma})"
-    },
-    {
-        "question": "What is an advantage of Z-score normalization?",
-        "options": [
-            "Useful when algorithms assume normally distributed data",
-            "Sensitive to outliers",
-            "Only works for categorical data",
-            "Increases the range of extreme values"
-        ],
-        "answer": "Useful when algorithms assume normally distributed data"
-    },
-    {
-        "question": "If a patient's cholesterol level is 250 mg/dL, the mean is 200 mg/dL, and σ = 40, what is the Z-score?",
-        "options": [
-            "1.25",
-            "0.50",
-            "2.00",
-            "1.00"
-        ],
-        "answer": "1.25"
-    },
-    {
-        "question": "What does a Z-score of 1.25 mean in this context?",
-        "options": [
-            "The cholesterol value is 1.25 standard deviations above the mean",
-            "The cholesterol value is below the mean",
-            "The cholesterol value equals the mean",
-            "The cholesterol value is 1.25 times the mean"
-        ],
-        "answer": "The cholesterol value is 1.25 standard deviations above the mean"
-    },
-    {
-        "question": "What is discretization in clinical data mining?",
-        "options": [
-            "Converting continuous attributes into categorical attributes",
-            "Scaling numerical data to [0,1]",
-            "Removing missing values",
-            "Detecting duplicate records"
-        ],
-        "answer": "Converting continuous attributes into categorical attributes"
-    },
-    {
-        "question": "Which of the following is an example of discretization?",
-        "options": [
-            "Age (continuous) → Age Groups (0–18, 19–35, 36–60, 60+)",
-            "Blood glucose normalization to [0,1]",
-            "Removing outliers from lab data",
-            "Randomly duplicating patient records"
-        ],
-        "answer": "Age (continuous) → Age Groups (0–18, 19–35, 36–60, 60+)"
-    },
-    {
-        "question": "What is a benefit of discretization?",
-        "options": [
-            "Simplifies models and improves interpretability",
-            "Increases continuous variability",
-            "Removes categorical data",
-            "Ignores patterns in data"
-        ],
-        "answer": "Simplifies models and improves interpretability"
-    },
-    {
-        "question": "Why is discretization useful for some algorithms?",
-        "options": [
-            "Some algorithms work better with categorical data",
-            "It makes continuous values larger",
-            "It deletes irrelevant patient records",
-            "It automatically predicts outcomes"
-        ],
-        "answer": "Some algorithms work better with categorical data"
-    },
-    {
-        "question": "How does discretization help in clinical datasets?",
-        "options": [
-            "Helps in identifying trends and patterns",
-            "Duplicates all patient records",
-            "Converts data into random numbers",
-            "Ignores patient history"
-        ],
-        "answer": "Helps in identifying trends and patterns"
-    },
-    {
-        "question": "Which of the following is a discretization technique?",
-        "options": [
-            "Equal-width binning",
-            "Z-score normalization",
-            "Min–Max scaling",
-            "Removing missing values"
-        ],
-        "answer": "Equal-width binning"
-    },
-    {
-        "question": "What is Equal-Width Binning?",
-        "options": [
-            "Dividing the range of values into intervals of equal size",
-            "Each bin has the same number of samples",
-            "Bins are based on expert rules or medical standards",
-            "Scaling values to [0,1]"
-        ],
-        "answer": "Dividing the range of values into intervals of equal size"
-    },
-    {
-        "question": "Which type of discretization ensures each bin has approximately the same number of samples?",
-        "options": [
-            "Equal-Frequency Binning",
-            "Equal-Width Binning",
-            "Custom (Domain-Based) Binning",
-            "Z-score normalization"
-        ],
-        "answer": "Equal-Frequency Binning"
-    },
-    {
-        "question": "What is Custom (Domain-Based) Binning?",
-        "options": [
-            "Bins are based on medical standards or expert rules",
-            "Dividing the range into equal intervals",
-            "Making all bins contain equal number of values",
-            "Normalizing values to have mean 0 and std 1"
-        ],
-        "answer": "Bins are based on medical standards or expert rules"
-    },
-    {
-        "question": "Which of the following is an example of Custom Binning for glucose levels?",
-        "options": [
-            "<100 mg/dL → Normal, 100–125 → Pre-diabetic, ≥126 → Diabetic",
-            "70–200 divided into 3 equal intervals",
-            "Sorting glucose values into bins of equal size",
-            "Scaling glucose values to [0,1]"
-        ],
-        "answer": "<100 mg/dL → Normal, 100–125 → Pre-diabetic, ≥126 → Diabetic"
-    }
+       
+    question: "She ______ finished her homework.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "has"
+},
+{
+    question: "They ______ visited London many times.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "I ______ seen that movie before.",
+    options: [
+        "has",
+        "had",
+        "have",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "He ______ eaten lunch already.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "has"
+},
+{
+    question: "We ______ completed the project.",
+    options: [
+        "has",
+        "have",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "She ______ never traveled by plane.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "has"
+},
+{
+    question: "I ______ just finished my work.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "They ______ already left the school.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "He ______ written three books.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "has"
+},
+{
+    question: "We ______ known each other for years.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "She ______ lost her keys.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "has"
+},
+{
+    question: "I ______ not finished my homework yet.",
+    options: [
+        "has",
+        "have",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "They ______ watched that film.",
+    options: [
+        "has",
+        "have",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "He ______ broken his leg.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "has"
+},
+{
+    question: "We ______ visited our grandparents.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "She ______ learned English very well.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "has"
+},
+{
+    question: "I ______ read that book before.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "They ______ bought a new car.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "He ______ finished the test already.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "has"
+},
+{
+    question: "We ______ visited the museum this week.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "have"
+},
+{
+    question: "She ______ to school yesterday.",
+    options: [
+        "go",
+        "goes",
+        "went",
+        "going"
+    ],
+    answer: "went"
+},
+{
+    question: "They ______ football last week.",
+    options: [
+        "play",
+        "played",
+        "plays",
+        "playing"
+    ],
+    answer: "played"
+},
+{
+    question: "I ______ my homework last night.",
+    options: [
+        "finish",
+        "finished",
+        "finishes",
+        "finishing"
+    ],
+    answer: "finished"
+},
+{
+    question: "He ______ a new car last year.",
+    options: [
+        "buy",
+        "buys",
+        "bought",
+        "buying"
+    ],
+    answer: "bought"
+},
+{
+    question: "We ______ dinner at 8 p.m. yesterday.",
+    options: [
+        "have",
+        "had",
+        "has",
+        "having"
+    ],
+    answer: "had"
+},
+{
+    question: "She ______ TV yesterday evening.",
+    options: [
+        "watch",
+        "watched",
+        "watches",
+        "watching"
+    ],
+    answer: "watched"
+},
+{
+    question: "They ______ to Baghdad last month.",
+    options: [
+        "travel",
+        "traveled",
+        "travels",
+        "traveling"
+    ],
+    answer: "traveled"
+},
+{
+    question: "I ______ a letter to my friend.",
+    options: [
+        "write",
+        "wrote",
+        "writes",
+        "writing"
+    ],
+    answer: "wrote"
+},
+{
+    question: "He ______ very hard for the exam.",
+    options: [
+        "study",
+        "studied",
+        "studies",
+        "studying"
+    ],
+    answer: "studied"
+},
+{
+    question: "We ______ our teacher yesterday.",
+    options: [
+        "meet",
+        "met",
+        "meets",
+        "meeting"
+    ],
+    answer: "met"
+},
+{
+    question: "She ______ breakfast at 7 a.m.",
+    options: [
+        "eat",
+        "ate",
+        "eats",
+        "eating"
+    ],
+    answer: "ate"
+},
+{
+    question: "They ______ the game last night.",
+    options: [
+        "win",
+        "won",
+        "wins",
+        "winning"
+    ],
+    answer: "won"
+},
+{
+    question: "I ______ a movie yesterday.",
+    options: [
+        "see",
+        "saw",
+        "sees",
+        "seeing"
+    ],
+    answer: "saw"
+},
+{
+    question: "He ______ his phone at home.",
+    options: [
+        "leave",
+        "leaves",
+        "left",
+        "leaving"
+    ],
+    answer: "left"
+},
+{
+    question: "We ______ a great time at the party.",
+    options: [
+        "have",
+        "has",
+        "had",
+        "having"
+    ],
+    answer: "had"
+},
+{
+    question: "She ______ a beautiful dress.",
+    options: [
+        "wear",
+        "wore",
+        "wears",
+        "wearing"
+    ],
+    answer: "wore"
+},
+{
+    question: "They ______ the door quickly.",
+    options: [
+        "open",
+        "opened",
+        "opens",
+        "opening"
+    ],
+    answer: "opened"
+},
+{
+    question: "I ______ my friend in the market.",
+    options: [
+        "meet",
+        "met",
+        "meets",
+        "meeting"
+    ],
+    answer: "met"
+},
+{
+    question: "He ______ a letter yesterday.",
+    options: [
+        "send",
+        "sent",
+        "sends",
+        "sending"
+    ],
+    answer: "sent"
+},
+{
+    question: "We ______ the lesson yesterday.",
+    options: [
+        "understand",
+        "understood",
+        "understands",
+        "understanding"
+    ],
+    answer: "understood"
+} ],
+			
+			
+            lec3: [{
+     question: "Jemima wishes she were:",
+    options: [
+        "tall",
+        "thin",
+        "gorgeous",
+        "thin and gorgeous"
+    ],
+    answer: "thin and gorgeous"
+},
+{
+    question: "Jemima thinks dreaming is:",
+    options: [
+        "not allowed",
+        "allowed",
+        "useless",
+        "impossible"
+    ],
+    answer: "allowed"
+},
+{
+    question: "She looks around the office:",
+    options: [
+        "loudly",
+        "cautiously",
+        "quickly",
+        "carelessly"
+    ],
+    answer: "cautiously"
+},
+{
+    question: "The coast is:",
+    options: [
+        "clear/fair",
+        "dangerous",
+        "dark",
+        "hidden"
+    ],
+    answer: "clear/fair"
+},
+{
+    question: "Jemima's life is:",
+    options: [
+        "exciting",
+        "humdrum",
+        "glamorous",
+        "thrilling"
+    ],
+    answer: "humdrum"
+},
+{
+    question: "Her talents are:",
+    options: [
+        "wasted/miserably",
+        "growing",
+        "useful",
+        "perfect"
+    ],
+    answer: "wasted/miserably"
+},
+{
+    question: "When asked about her job, she holds her head:",
+    options: [
+        "lowly",
+        "high",
+        "tall/high",
+        "shyly"
+    ],
+    answer: "tall/high"
+},
+{
+    question: "The inevitable question is:",
+    options: [
+        "Who do you work for?",
+        "Where do you live?",
+        "How old are you?",
+        "What is your salary?"
+    ],
+    answer: "Who do you work for?"
+},
+{
+    question: "Ben Williams is:",
+    options: [
+        "short",
+        "tall and handsome",
+        "average",
+        "ugly"
+    ],
+    answer: "tall and handsome"
+},
+{
+    question: "Ben Williams is secretly:",
+    options: [
+        "liked by no one",
+        "fancied by every woman",
+        "disliked",
+        "ignored"
+    ],
+    answer: "fancied by every woman"
+},
+{
+    question: "The woman in the sandwich bar follows Ben:",
+    options: [
+        "angrily",
+        "secretly",
+        "thoughtfully/longingly",
+        "slowly"
+    ],
+    answer: "thoughtfully/longingly"
+},
+{
+    question: "Ben Williams' hair is:",
+    options: [
+        "black",
+        "red",
+        "fair/light brown",
+        "dark brown"
+    ],
+    answer: "fair/light brown"
+},
+{
+    question: "His hair hangs:",
+    options: [
+        "perfectly",
+        "awkwardly",
+        "carelessly/casually/awkwardly",
+        "neatly"
+    ],
+    answer: "carelessly/casually/awkwardly"
+},
+{
+    question: "His dimples appear when he:",
+    options: [
+        "cries",
+        "smiles",
+        "frowns",
+        "laughs loudly"
+    ],
+    answer: "smiles"
+},
+{
+    question: "His eyebrows are:",
+    options: [
+        "messy",
+        "perfectly/utterly arched",
+        "missing",
+        "straight"
+    ],
+    answer: "perfectly/utterly arched"
+},
+{
+    question: "The silver candlesticks are:",
+    options: [
+        "shiny",
+        "new",
+        "tarnished/faded",
+        "broken"
+    ],
+    answer: "tarnished/faded"
+},
+{
+    question: "People write to Jemima because they feel:",
+    options: [
+        "happy",
+        "excited",
+        "alone/lonely/derelict",
+        "bored"
+    ],
+    answer: "alone/lonely/derelict"
+},
+{
+    question: "Jemima's lunch break lasts:",
+    options: [
+        "10 minutes",
+        "half an hour",
+        "one hour",
+        "45 minutes"
+    ],
+    answer: "half an hour"
+},
+{
+    question: "Jemima describes her sandwich as:",
+    options: [
+        "small",
+        "sweet",
+        "massive double-decker",
+        "plain"
+    ],
+    answer: "massive double-decker"
+},
+{
+    question: "Jemima loves the:",
+    options: [
+        "French language",
+        "Spanish language",
+        "German language",
+        "English language"
+    ],
+    answer: "English language"
+},
+{
+    question: "Jemima plays with:",
+    options: [
+        "numbers",
+        "words",
+        "pictures",
+        "music"
+    ],
+    answer: "words"
+},
+{
+    question: "Her journalism involves:",
+    options: [
+        "delivering newspapers",
+        "calling lino manufacturers",
+        "writing novels",
+        "giving lectures"
+    ],
+    answer: "calling lino manufacturers"
+},
+{
+    question: "The Kilburn Herald is:",
+    options: [
+        "a TV channel",
+        "where she works",
+        "her favorite magazine",
+        "a radio station"
+    ],
+    answer: "where she works"
+},
+{
+    question: "Jemima thinks her life is:",
+    options: [
+        "exciting",
+        "glamorous",
+        "humdrum/dreary",
+        "perfect"
+    ],
+    answer: "humdrum/dreary"
+},
+{
+    question: "She sneaks chocolate:",
+    options: [
+        "openly",
+        "secretly",
+        "with friends",
+        "carelessly"
+    ],
+    answer: "secretly"
+},
 
-            ],
-			
-			
-            lec3: [
-    {
-        "question": "What does it mean when a clinical dataset is high-dimensional?",
-        "options": [
-            "It contains very few patient records",
-            "It contains many attributes (features) such as lab results, demographics, or genetic data",
-            "It is stored in a small database",
-            "It has only imaging biomarkers"
-        ],
-        "answer": "It contains many attributes (features) such as lab results, demographics, or genetic data"
-    },
-    {
-        "question": "Which of the following is a consequence of having too many features in clinical datasets?",
-        "options": [
-            "Reduced model complexity",
-            "Model overfitting",
-            "Faster computation",
-            "Easier data interpretation"
-        ],
-        "answer": "Model overfitting"
-    },
-    {
-        "question": "What is the purpose of data transformation and feature selection/extraction?",
-        "options": [
-            "To increase the number of features for analysis",
-            "To simplify data while keeping important information",
-            "To remove patient records randomly",
-            "To make data harder to interpret"
-        ],
-        "answer": "To simplify data while keeping important information"
-    },
-    {
-        "question": "What is the main goal of data transformation?",
-        "options": [
-            "Converting data from one format or scale to another to improve model performance or compatibility",
-            "Removing irrelevant features from the dataset",
-            "Increasing the number of patient records",
-            "Randomly modifying data values"
-        ],
-        "answer": "Converting data from one format or scale to another to improve model performance or compatibility"
-    },
-    {
-        "question": "Data transformation helps in:",
-        "options": [
-            "Improving model performance and ensuring data compatibility",
-            "Making the dataset more complex without purpose",
-            "Deleting important features from the dataset",
-            "Reducing the number of patient samples"
-        ],
-        "answer": "Improving model performance and ensuring data compatibility"
-    },
-    {
-        "question": "What is the purpose of feature selection?",
-        "options": [
-            "Selecting the most relevant features that have the highest impact on prediction or classification tasks",
-            "Increasing the number of features randomly",
-            "Removing all features from the dataset",
-            "Converting data to a new scale"
-        ],
-        "answer": "Selecting the most relevant features that have the highest impact on prediction or classification tasks"
-    },
-    {
-        "question": "Which of the following is an example of feature selection in predicting heart disease?",
-        "options": [
-            "Using only key features like Age, Cholesterol, Blood Pressure, and Smoking History",
-            "Using all available patient data without filtering",
-            "Randomly selecting features unrelated to heart disease",
-            "Ignoring patient demographics"
-        ],
-        "answer": "Using only key features like Age, Cholesterol, Blood Pressure, and Smoking History"
-    },
-    {
-        "question": "How does feature selection help in clinical data analysis?",
-        "options": [
-            "It improves accuracy and interpretability of the model",
-            "It makes data more complex and harder to interpret",
-            "It randomly removes features without impact",
-            "It decreases model performance intentionally"
-        ],
-        "answer": "It improves accuracy and interpretability of the model"
-    },
-    {
-        "question": "Which feature selection method uses statistical measures like correlation, ANOVA, or chi-square test?",
-        "options": [
-            "Filter Methods",
-            "Wrapper Methods",
-            "Embedded Methods",
-            "Dimensionality Reduction"
-        ],
-        "answer": "Filter Methods"
-    },
-    {
-        "question": "Which method evaluates subsets of features based on model performance?",
-        "options": [
-            "Filter Methods",
-            "Wrapper Methods",
-            "Embedded Methods",
-            "Normalization Methods"
-        ],
-        "answer": "Wrapper Methods"
-    },
-    {
-        "question": "Which feature selection method performs selection during model training?",
-        "options": [
-            "Filter Methods",
-            "Wrapper Methods",
-            "Embedded Methods",
-            "Discretization Methods"
-        ],
-        "answer": "Embedded Methods"
-    },
-    {
-        "question": "Which is an example of a wrapper method?",
-        "options": [
-            "Recursive Feature Elimination (RFE)",
-            "Correlation analysis",
-            "LASSO regression",
-            "Equal-width binning"
-        ],
-        "answer": "Recursive Feature Elimination (RFE)"
-    },
-    {
-        "question": "Which feature selection approach might remove highly correlated lab tests?",
-        "options": [
-            "Filter Methods",
-            "Wrapper Methods",
-            "Embedded Methods",
-            "PCA"
-        ],
-        "answer": "Filter Methods"
-    },
-    {
-        "question": "What is the main purpose of feature extraction?",
-        "options": [
-            "To transform original features into a new set that summarizes the most important information",
-            "To remove patient records randomly",
-            "To increase the number of original features",
-            "To convert categorical data to numerical"
-        ],
-        "answer": "To transform original features into a new set that summarizes the most important information"
-    },
-    {
-        "question": "Which technique is commonly used for feature extraction by converting correlated features into uncorrelated components?",
-        "options": [
-            "Principal Component Analysis (PCA)",
-            "Recursive Feature Elimination (RFE)",
-            "Correlation analysis",
-            "Equal-width binning"
-        ],
-        "answer": "Principal Component Analysis (PCA)"
-    },
-    {
-        "question": "PCA reduces the number of features while keeping:",
-        "options": [
-            "Most of the variance in fewer dimensions",
-            "Only the first two original features",
-            "All original features unchanged",
-            "Random features for analysis"
-        ],
-        "answer": "Most of the variance in fewer dimensions"
-    },
-    {
-        "question": "In the example given, 20 lab test results are reduced to 3 main components representing:",
-        "options": [
-            "Liver Function, Kidney Function, Blood Cell Activity",
-            "Heart Rate, Age, Cholesterol",
-            "Smoking History, Exercise Level, Diet",
-            "Blood Pressure, Glucose, BMI"
-        ],
-        "answer": "Liver Function, Kidney Function, Blood Cell Activity"
-    },
-    {
-        "question": "What is the main purpose of Linear Discriminant Analysis (LDA)?",
-        "options": [
-            "Used for classification tasks and maximizes separation between disease groups",
-            "Compresses and reconstructs data using neural networks",
-            "Removes missing values from datasets",
-            "Converts categorical features to numerical"
-        ],
-        "answer": "Used for classification tasks and maximizes separation between disease groups"
-    },
-    {
-        "question": "LDA is typically applied in which type of learning?",
-        "options": [
-            "Supervised learning",
-            "Unsupervised learning",
-            "Reinforcement learning",
-            "Semi-supervised learning"
-        ],
-        "answer": "Supervised learning"
-    },
-    {
-        "question": "Autoencoders are useful for:",
-        "options": [
-            "Compressing and reconstructing data, especially in imaging or genomic datasets",
-            "Reducing data dimensionality using statistical correlation",
-            "Selecting top predictive features for classification",
-            "Normalizing lab test values"
-        ],
-        "answer": "Compressing and reconstructing data, especially in imaging or genomic datasets"
-    },
-    {
-        "question": "What is the goal of the dataset analysis?",
-        "options": [
-            "Predict risk of kidney failure in diabetic patients",
-            "Predict heart disease in healthy patients",
-            "Classify patients by age group only",
-            "Measure blood pressure trends"
-        ],
-        "answer": "Predict risk of kidney failure in diabetic patients"
-    },
-    {
-        "question": "Which step is used first to simplify the dataset?",
-        "options": [
-            "Feature selection to keep only relevant lab tests",
-            "PCA to reduce dimensions",
-            "Visualization of clusters",
-            "Randomly removing patients"
-        ],
-        "answer": "Feature selection to keep only relevant lab tests"
-    },
-    {
-        "question": "After feature selection, which technique is applied to reduce the dataset to 2 main components?",
-        "options": [
-            "Principal Component Analysis (PCA)",
-            "Linear Discriminant Analysis (LDA)",
-            "Autoencoders",
-            "Recursive Feature Elimination (RFE)"
-        ],
-        "answer": "Principal Component Analysis (PCA)"
-    },
-    {
-        "question": "What is the purpose of visualizing patient clusters?",
-        "options": [
-            "To distinguish healthy vs risk groups",
-            "To increase the number of features",
-            "To randomly shuffle lab test results",
-            "To remove irrelevant patient records"
-        ],
-        "answer": "To distinguish healthy vs risk groups"
-    }
 ]
         };
 
